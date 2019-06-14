@@ -5,23 +5,25 @@
     "version": "0.2.0",
     "configurations": [
         {
-            "name": "(gdb) Launch",
+            "name": "clang++-7.0 build and debug active file",
             "type": "cppdbg",
             "request": "launch",
-            "program": "TMA1Question1",
+            "program": "${fileDirname}/${fileBasenameNoExtension}",
             "args": [],
             "stopAtEntry": false,
             "cwd": "${workspaceFolder}",
             "environment": [],
-            "externalConsole": true,
-            "MIMode": "gdb",
+            "externalConsole": false,
+            "MIMode": "lldb",
             "setupCommands": [
                 {
                     "description": "Enable pretty-printing for gdb",
                     "text": "-enable-pretty-printing",
                     "ignoreFailures": true
                 }
-            ]
+            ],
+            "preLaunchTask": "clang++-7.0 build active file",
+            "miDebuggerPath": "/usr/bin/lldb-mi-7.0.1"
         }
     ]
 }
