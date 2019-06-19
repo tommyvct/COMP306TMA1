@@ -1,0 +1,55 @@
+DESCRIPTION
+       zypper is a command-line interface to ZYpp system management library (libzypp). It can be used to install, update,
+       remove software, manage repositories, perform various queries, and more.
+
+CONCEPTS
+       Most of the following concepts are common for all applications based on the libzypp package management library,
+       but there are some zypper specifics.
+
+   System Packages
+       The set of installed packages on a system is sometimes denoted as repository @System or System Packages. In
+       contrast to available repositories providing packages which can be installed, @System provides packages which can
+       only be deleted. Installed packages which are not also provided by at least one of the available repositories are
+       often denoted as being unwanted, orphaned or dropped.
+
+   Repositories
+       Libzypp works with repository metadata, this is information about packages and their relations extracted from RPM
+       packages and other data like patch information, pattern definitions, etc. These data are stored together with the
+       RPM files in folders called repositories. Repositories can be placed on various media like an HTTP or FTP server,
+       DVD, or a folder on a local disc.
+
+       There is a special set of commands in zypper intended to manipulate repositories. Also many commands and options
+       take a repository as an argument. See section COMMANDS, subsection Repository Management for more details.
+
+   GPG checks
+       Disabling GPG checks is not recommended. Signing data enables the recipient to verify that no modifications
+       occurred after the data were signed. Accepting data with no, wrong or unknown signature can lead to a corrupted
+       system and in extreme cases even to a system compromise.
+
+       DESCRIPTION
+       zypper is a command-line interface to ZYpp system management library (libzypp). It can be used to install, update,
+       remove software, manage repositories, perform various queries, and more.
+
+CONCEPTS
+       Most of the following concepts are common for all applications based on the libzypp package management library,
+       but there are some zypper specifics.
+
+   System Packages
+       The set of installed packages on a system is sometimes denoted as repository @System or System Packages. In
+       contrast to available repositories providing packages which can be installed, @System provides packages which can
+       only be deleted. Installed packages which are not also provided by at least one of the available repositories are
+       often denoted as being unwanted, orphaned or dropped.
+
+   Repositories
+       Libzypp works with repository metadata, this is information about packages and their relations extracted from RPM
+       packages and other data like patch information, pattern definitions, etc. These data are stored together with the
+       RPM files in folders called repositories. Repositories can be placed on various media like an HTTP or FTP server,
+       DVD, or a folder on a local disc.
+
+       There is a special set of commands in zypper intended to manipulate repositories. Also many commands and options
+       take a repository as an argument. See section COMMANDS, subsection Repository Management for more details.
+
+   GPG checks
+       Disabling GPG checks is not recommended. Signing data enables the recipient to verify that no modifications
+       occurred after the data were signed. Accepting data with no, wrong or unknown signature can lead to a corrupted
+       system and in extreme cases even to a system compromise.
