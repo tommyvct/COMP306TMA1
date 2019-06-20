@@ -1,11 +1,10 @@
-//: TMA1Question1.cpp
+//: TMA1Question2.cpp
 
 /* 
-    Title: TMA1Question1.cpp
+    Title: TMA1Question2.cpp
     Description: 
-        A program that opens a file and counts the whitespace-separated
-        words in that file.
-    Date: June 09, 2019
+        A program that opens a file and display the file line by line.
+    Date: June 20, 2019
     Author: Tommy Wu
 */
 
@@ -15,54 +14,59 @@
     Program Purpose:
         1. open files that passed from parameters, if there are something wrong
             with the file, print error to buffered stderr then abort
-        2. read the words one by one, and count it
-        3. display filenames and word counts.
+        2. read the words line by line, and print it out to stdout
 
-    Compile: clang++ TMA1Question1.cpp -o TMA1Question1
-    Execution: ./TMAQuestion1 <file1> <file2> <file...>
+    Compile: clang++ TMA1Question2.cpp -o TMA1Question2
+    Execution: ./TMAQuestion2 <file1> <file2> <file...>
 */
 
 /*
     TEST PLAN
 
     nornal case:
-        > ./TMA1Question1 GoodFile1.txt GoodFile2.txt
-        File "GoodFile1.txt", word count: 233
-        File "GoodFile2.txt", word count: 666
+        > ./TMA1Question2 GoodFile1.txt GoodFile2.txt
+        File "GoodFile1.txt":
+        // ***file content***
+        File "GoodFile2.txt":
+        // ***file content***
 
     Bad case 1:
-        > ./TMA1Question1 GoodFile1.txt nonexist.txt
-        File "GoodFile1.txt", word count: 233
+        > ./TMA1Question2 GoodFile1.txt nonexist.txt
+        File "GoodFile1.txt":
+        // ***file content***
         error: no such file or directory: nonexist.txt
 
     Bad case 2:
-        > ./TMA1Question1 nonexist.txt GoodFile1.txt
+        > ./TMA1Question2 nonexist.txt GoodFile1.txt
         error: no such file or directory: nonexist.txt
-        File "GoodFile1.txt", word count: 233
+        File "GoodFile1.txt":
+        // ***file content***
 
     Bad case 3:
         > ./TMA1Question2 SpaceOnly.txt ZeroLength.txt
-        File "SpaceOnly.txt", word count: 0
-        File "ZeroLength.txt", word count: 0
+        File "SpaceOnly.txt":
+        // lines of spaces
+        File "ZeroLength.txt":
 
     Bad case 4:
-        > ./TMA1Question1
+        > ./TMA1Question2
         error: no input file.
 
     Bad case 5:
-        > ./TMA1Question1 NonEnglishScript.txt
-        File "NonEnglishScript.txt", word count: 6
+        > ./TMA1Question2 NonEnglishScript.txt
+        File "NonEnglishScript.txt":
+        // ***file content***
 
     Bad case 6: 
-        > ./TMA1Question1 SpaceOnly.txt
-        File "SpaceOnly.txt", word count: 0
+        > ./TMA1Question2 SpaceOnly.txt
+        File "SpaceOnly.txt":
+        // lines of spaces
 
     Discussion:
-        This program will works properly on plain text files that does not 
-        contain non-space separated language(eg. Chinese or Japanese).
+        This program will works properly on plain text files.
         These example files can be found in Q1Test folder.
         These tests are included in test.sh
- */
+*/
 
 #include <string>
 #include <iostream>
@@ -95,15 +99,16 @@ int main(int argc, char const *argv[])
             clog << "error: no such file or directory: " << *(argv + i) << endl;
             continue;             // skip it
         }
+
+        cout << "File \"" << *(argv + i) << "\": " << endl;
         
-        int counter = 0;
-        while (file >> s)
+        while (getline(file, s))
         {
-            counter++;
+            cout << s;            // print
+            cin.get();            // get enter
         }
         
-        cout << "File \"" << *(argv + i) << "\", ";
-        cout << "word count: " << counter << endl;
+        cout << endl << endl;
         file.close();
     }
     

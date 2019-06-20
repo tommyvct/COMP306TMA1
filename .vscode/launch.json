@@ -3,31 +3,32 @@
     // Hover to view descriptions of existing attributes.
     // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
     "version": "0.2.0",
-    "configurations": [
-    {
-        "name": "(gdb) Launch",
-        "type": "cppdbg",
-        "request": "launch",
-        "program": "${workspaceFolder}/TMA1Question1",
-        "args": [
-            "normal.txt"
-        ],
-        "stopAtEntry": false,
-        "cwd": "${workspaceFolder}",
-        "environment": [],
-        "externalConsole": false,
-        "MIMode": "gdb",
-        "setupCommands": [
-            {
-                "description": "Enable pretty-printing for gdb",
-                "text": "-enable-pretty-printing",
-                "ignoreFailures": true
-            }
-        ],
-        "preLaunchTask": "clang++-7.0 build active file",
-    },
+    "configurations": 
+    [
         {
-            "name": "clang++-7.0 build and debug active file",
+            "name": "wsl debug",
+            "type": "cppdbg",
+            "request": "launch",
+            "program": "${workspaceFolder}/TMA1Question2",
+            "args": [
+                "normal.txt"
+            ],
+            "stopAtEntry": false,
+            "cwd": "${workspaceFolder}",
+            "environment": [],
+            "externalConsole": false,
+            "MIMode": "gdb",
+            "setupCommands": [
+                {
+                    "description": "Enable pretty-printing for gdb",
+                    "text": "-enable-pretty-printing",
+                    "ignoreFailures": true
+                }
+            ],
+            "preLaunchTask": "clang++ build active file",
+        },
+        {
+            "name": "suse debug",
             "type": "cppdbg",
             "request": "launch",
             "program": "${fileDirname}/${fileBasenameNoExtension}",
@@ -46,8 +47,32 @@
                     "ignoreFailures": true
                 }
             ],
-            "preLaunchTask": "clang++-7.0 build active file",
+            "preLaunchTask": "clang++ build active file",
             "miDebuggerPath": "/usr/bin/lldb-mi-7.0.1"
+        },
+        {
+            "name": "ubuntu debug",
+            "type": "cppdbg",
+            "request": "launch",
+            "program": "${fileDirname}/${fileBasenameNoExtension}",
+            "args": [
+                "/home/@opensuse/tommyvct/Documents/GitHub/COMP306TMA1/Q1Test/GoodFile2.txt"
+            ],
+            "stopAtEntry": false,
+            "cwd": "${workspaceFolder}",
+            "environment": [],
+            "externalConsole": false,
+            "MIMode": "lldb",
+            "setupCommands": [
+                {
+                    "description": "Enable pretty-printing for gdb",
+                    "text": "-enable-pretty-printing",
+                    "ignoreFailures": true
+                }
+            ],
+            "preLaunchTask": "clang++ build active file",
+            "miDebuggerPath": "/usr/bin/lldb-mi-8"
         }
+
     ]
 }
