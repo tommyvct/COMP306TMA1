@@ -20,7 +20,7 @@
         5. print it
         6. loop 2 ~ 5 for 25 times in total
     Compile: clang++ TMA1Question3.cpp -o TMA1Question3
-    Execution: ./TMAQuestion3 
+    Execution: ./TMA1Question3 
 */
 
 /*
@@ -33,20 +33,20 @@
 
 using namespace std;
 
-int main()
+int main(void)
 {
     vector<float> loop_counter_value;
     vector<float> loop_counter_value_squared;
-    vector<float> total;
+    vector<float> sum;
 
     for (int i = 0; i < 25; i++)
     {
         loop_counter_value.push_back((float) i);
         loop_counter_value_squared.push_back(square((float) i));
-        total.push_back(loop_counter_value.at(i) + 
+        sum.push_back(loop_counter_value.at(i) + 
                         loop_counter_value_squared.at(i));
         cout << i << "; " << loop_counter_value.at(i) << " + ";
-        cout << loop_counter_value_squared.at(i) << " = " << total.at(i);
+        cout << loop_counter_value_squared.at(i) << " = " << sum.at(i);
         cout << endl;
     }
 

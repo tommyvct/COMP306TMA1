@@ -19,7 +19,7 @@
         3. display filenames and word counts.
 
     Compile: clang++ TMA1Question1.cpp -o TMA1Question1
-    Execution: ./TMAQuestion1 <file1> <file2> <file...>
+    Execution: ./TMA1Question1 <file1> <file2> <file...>
 */
 
 /*

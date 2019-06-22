@@ -1,10 +1,11 @@
-//: TMA1Question2.cpp
+//: TMA1Question5.cpp
 
 /* 
-    Title: TMA1Question2.cpp
+    Title: TMA1Question5.cpp
     Description: 
-        A program that open given files and display these files line by line.
-    Date: June 20, 2019
+        A program that open given files and display these files line by line 
+        with line number.
+    Date: June 22, 2019
     Author: Tommy Wu
 */
 
@@ -14,51 +15,52 @@
     Program Purpose:
         1. open files that passed from parameters, if there are something wrong
             with the file, print error to buffered stderr then abort
-        2. read the words line by line, and print it out to stdout
+        2. read the words line by line into a string array
+        3. print the string array to stdout
 
-    Compile: clang++ TMA1Question2.cpp -o TMA1Question2
-    Execution: ./TMA1Question2 <file1> <file2> <file...>
+    Compile: clang++ TMA1Question5.cpp -o TMA1Question5
+    Execution: ./TMAQuestion5 <file1> <file2> <file...>
 */
 
 /*
     TEST PLAN
 
     nornal case:
-        > ./TMA1Question2 GoodFile1.txt GoodFile2.txt
+        > ./TMA1Question5 GoodFile1.txt GoodFile2.txt
         File "GoodFile1.txt":
         // ***file content***
         File "GoodFile2.txt":
         // ***file content***
 
     Bad case 1:
-        > ./TMA1Question2 GoodFile1.txt nonexist.txt
+        > ./TMA1Question5 GoodFile1.txt nonexist.txt
         File "GoodFile1.txt":
         // ***file content***
         error: no such file or directory: nonexist.txt
 
     Bad case 2:
-        > ./TMA1Question2 nonexist.txt GoodFile1.txt
+        > ./TMA1Question5 nonexist.txt GoodFile1.txt
         error: no such file or directory: nonexist.txt
         File "GoodFile1.txt":
         // ***file content***
 
     Bad case 3:
-        > ./TMA1Question2 SpaceOnly.txt ZeroLength.txt
+        > ./TMA1Question5 SpaceOnly.txt ZeroLength.txt
         File "SpaceOnly.txt":
         // lines of spaces
         File "ZeroLength.txt":
 
     Bad case 4:
-        > ./TMA1Question2
+        > ./TMA1Question5
         error: no input file.
 
     Bad case 5:
-        > ./TMA1Question2 NonEnglishScript.txt
+        > ./TMA1Question5 NonEnglishScript.txt
         File "NonEnglishScript.txt":
         // ***file content***
 
     Bad case 6: 
-        > ./TMA1Question2 SpaceOnly.txt
+        > ./TMA1Question5 SpaceOnly.txt
         File "SpaceOnly.txt":
         // lines of spaces
 
@@ -85,14 +87,18 @@ int main(int argc, char const *argv[])
         return 1;
     }
 
+
     ifstream file;
-    string s;
-    
+    string s[100];
+    int length;          
+
+
     // for every file given in the parameter
     for (int i = 1; i < argc; i++)
     {
         file.open(*(argv + i));
         
+
         // if there are something wrong with the file
         if (!file.good())
         {
@@ -100,14 +106,29 @@ int main(int argc, char const *argv[])
             continue;             // skip it
         }
 
+
         cout << "File \"" << *(argv + i) << "\": " << endl;
         
-        while (getline(file, s))
+        for (length = 0; length < 100; length++)
         {
-            cout << s;            // print
-            cin.get();            // get enter
+            if (getline(file, s[i]))
+            {
+                // insert line number
+                s[i] = "line " + to_string(i+1) + ": " + s[i];
+            }
+            else
+            {
+                break;
+            }
+            
         }
         
+        for (int j = 0; j < length + 1; j++)
+        {
+            cout << s[j] << endl;
+        }
+
+
         cout << endl << endl;
         file.close();
     }
