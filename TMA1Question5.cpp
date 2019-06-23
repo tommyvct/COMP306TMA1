@@ -4,7 +4,7 @@
     Title: TMA1Question5.cpp
     Description: 
         A program that open given files and display these files line by line 
-        with line number.
+        with line number, up to 100 lines.
     Date: June 22, 2019
     Author: Tommy Wu
 */
@@ -35,19 +35,19 @@
     Bad case 1:
         > ./TMA1Question5 GoodFile1.txt nonexist.txt
         File "GoodFile1.txt":
-        // ***file content***
+        // ***file content with line numbers***
         error: no such file or directory: nonexist.txt
 
     Bad case 2:
         > ./TMA1Question5 nonexist.txt GoodFile1.txt
         error: no such file or directory: nonexist.txt
         File "GoodFile1.txt":
-        // ***file content***
+        // ***file content with line numbers***
 
     Bad case 3:
         > ./TMA1Question5 SpaceOnly.txt ZeroLength.txt
         File "SpaceOnly.txt":
-        // lines of spaces
+        // lines of spaces with line numbers
         File "ZeroLength.txt":
 
     Bad case 4:
@@ -57,12 +57,12 @@
     Bad case 5:
         > ./TMA1Question5 NonEnglishScript.txt
         File "NonEnglishScript.txt":
-        // ***file content***
+        // ***file content with line numbers***
 
     Bad case 6: 
         > ./TMA1Question5 SpaceOnly.txt
         File "SpaceOnly.txt":
-        // lines of spaces
+        // lines of spaces with line numbers
 
     Discussion:
         This program will works properly on plain text files.
@@ -87,9 +87,9 @@ int main(int argc, char const *argv[])
         return 1;
     }
 
-
+    const int LINES_LIMIT = 100;
     ifstream file;
-    string s[100];
+    string s[LINES_LIMIT];
     int length;
 
 
@@ -106,26 +106,22 @@ int main(int argc, char const *argv[])
             continue;             // skip it
         }
 
-
+        // print file name
         cout << "File \"" << *(argv + i) << "\": " << endl;
         
-        for (length = 0; length < 100; length++)
+        // read lines into string array
+        for (length = 0; length < LINES_LIMIT; length++)
         {
-            if (getline(file, s[i]))
-            {
-                // insert line number
-                s[i] = "line " + to_string(i+1) + ": " + s[i];
-            }
-            else
+            if (!getline(file, s[length])) 
             {
                 break;
             }
-            
         }
         
-        for (int j = 0; j < length + 1; j++)
+        // print it out with line numbers
+        for (int j = 0; j < length; j++)
         {
-            cout << s[j] << endl;
+            cout << "line " << j + 1 <<  ": " << s[j] << endl;
         }
 
 

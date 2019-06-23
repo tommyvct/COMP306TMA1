@@ -33,7 +33,8 @@
             "request": "launch",
             "program": "${fileDirname}/${fileBasenameNoExtension}",
             "args": [
-                "normal.txt"
+                "Q1Test/GoodFile1.txt",
+                "Q1Test/ZeroLength.txt"
             ],
             "stopAtEntry": false,
             "cwd": "${workspaceFolder}",
