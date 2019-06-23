@@ -45,8 +45,8 @@
         function. When a char sequence that cannot turn into an integer been 
         passed to atoi(), it will return 0. At the same time, 0 is not a valid 
         parameter either since only integer greater than 1 is valid. Thus if the
-        output of atoi() is smaller than 2, the parameter passed in is considerd
-        invalid.
+        output of atoi() is smaller than 2, the parameter passed in is 
+        considered invalid.
  */
 #include <iostream>
 
