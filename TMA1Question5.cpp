@@ -25,7 +25,7 @@
 /*
     TEST PLAN
 
-    nornal case:
+    normal case:
         > ./TMA1Question5 GoodFile1.txt GoodFile2.txt
         File "GoodFile1.txt":
         // ***file content***
@@ -90,7 +90,7 @@ int main(int argc, char const *argv[])
 
     ifstream file;
     string s[100];
-    int length;          
+    int length;
 
 
     // for every file given in the parameter
