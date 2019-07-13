@@ -1,5 +1,5 @@
-CC = clang++
-CFLAGS = -Wall
+CXX = clang++
+CXXFLAGS = -Wall
 DEBUG = -g
 SRC = ./src
 BIN = ./bin
@@ -15,36 +15,36 @@ BIN:
 
 
 TMA1Q1: $(SRC)/TMA1Question1.cpp
-	$(CC) $(CFLAGS) $(SRC)/TMA1Question1.cpp -o $(BIN)/TMA1Question1
+	$(CXX) $(CXXFLAGS) $(SRC)/TMA1Question1.cpp -o $(BIN)/TMA1Question1
 
 TMA1Q2: $(SRC)/TMA1Question2.cpp
-	$(CC) $(CFLAGS) $(SRC)/TMA1Question2.cpp -o $(BIN)/TMA1Question2
+	$(CXX) $(CXXFLAGS) $(SRC)/TMA1Question2.cpp -o $(BIN)/TMA1Question2
 
 TMA1Q3: $(SRC)/TMA1Question3.cpp
-	$(CC) $(CFLAGS) $(SRC)/TMA1Question3.cpp -o $(BIN)/TMA1Question3
+	$(CXX) $(CXXFLAGS) $(SRC)/TMA1Question3.cpp -o $(BIN)/TMA1Question3
 
 TMA1Q4: $(SRC)/TMA1Question4.cpp
-	$(CC) $(CFLAGS) $(SRC)/TMA1Question4.cpp -o $(BIN)/TMA1Question4
+	$(CXX) $(CXXFLAGS) $(SRC)/TMA1Question4.cpp -o $(BIN)/TMA1Question4
 
 TMA1Q5: $(SRC)/TMA1Question5.cpp
-	$(CC) $(CFLAGS) $(SRC)/TMA1Question5.cpp -o $(BIN)/TMA1Question5
+	$(CXX) $(CXXFLAGS) $(SRC)/TMA1Question5.cpp -o $(BIN)/TMA1Question5
 
 
 
 TMA1Q1_debug: $(SRC)/TMA1Question1.cpp
-	$(CC) $(CFLAGS) $(DEBUG) $(SRC)/TMA1Question1.cpp -o $(BIN)/TMA1Question1
+	$(CXX) $(CXXFLAGS) $(DEBUG) $(SRC)/TMA1Question1.cpp -o $(BIN)/TMA1Question1
 
 TMA1Q2_debug: $(SRC)/TMA1Question2.cpp
-	$(CC) $(CFLAGS) $(DEBUG) $(SRC)/TMA1Question2.cpp -o $(BIN)/TMA1Question2
+	$(CXX) $(CXXFLAGS) $(DEBUG) $(SRC)/TMA1Question2.cpp -o $(BIN)/TMA1Question2
 
 TMA1Q3_debug: $(SRC)/TMA1Question3.cpp
-	$(CC) $(CFLAGS) $(DEBUG) $(SRC)/TMA1Question3.cpp -o $(BIN)/TMA1Question3
+	$(CXX) $(CXXFLAGS) $(DEBUG) $(SRC)/TMA1Question3.cpp -o $(BIN)/TMA1Question3
 
 TMA1Q4_debug: $(SRC)/TMA1Question4.cpp
-	$(CC) $(CFLAGS) $(DEBUG) $(SRC)/TMA1Question4.cpp -o $(BIN)/TMA1Question4
+	$(CXX) $(CXXFLAGS) $(DEBUG) $(SRC)/TMA1Question4.cpp -o $(BIN)/TMA1Question4
 
 TMA1Q5_debug: $(SRC)/TMA1Question5.cpp
-	$(CC) $(CFLAGS) $(DEBUG) $(SRC)/TMA1Question5.cpp -o $(BIN)/TMA1Question5
+	$(CXX) $(CXXFLAGS) $(DEBUG) $(SRC)/TMA1Question5.cpp -o $(BIN)/TMA1Question5
 
 
 
