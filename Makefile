@@ -5,46 +5,46 @@ SRC = ./src
 BIN = ./bin
 
 
-TMA1: BIN TMA1Q1 TMA1Q2 TMA1Q3 TMA1Q4 TMA1Q5
+all: BIN TMA1Question1 TMA1Question2 TMA1Question3 TMA1Question4 TMA1Question5
 
-debug: BIN TMA1Q1_debug TMA1Q2_debug TMA1Q3_debug TMA1Q4_debug TMA1Q5_debug
+debug: BIN TMA1Question1_debug TMA1Question2_debug TMA1Question3_debug TMA1Question4_debug TMA1Question5_debug
 
 BIN: 
 	mkdir bin
 
 
 
-TMA1Q1: $(SRC)/TMA1Question1.cpp
-	$(CXX) $(CXXFLAGS) $(SRC)/TMA1Question1.cpp -o $(BIN)/TMA1Question1
+TMA1Question1: $(SRC)/TMA1Question1.cpp
+	$(CXX) $(CXXFLAGS) $< -o $(BIN)/$@
 
-TMA1Q2: $(SRC)/TMA1Question2.cpp
-	$(CXX) $(CXXFLAGS) $(SRC)/TMA1Question2.cpp -o $(BIN)/TMA1Question2
+TMA1Question2: $(SRC)/TMA1Question2.cpp
+	$(CXX) $(CXXFLAGS) $< -o $(BIN)/$@
 
-TMA1Q3: $(SRC)/TMA1Question3.cpp
-	$(CXX) $(CXXFLAGS) $(SRC)/TMA1Question3.cpp -o $(BIN)/TMA1Question3
+TMA1Question3: $(SRC)/TMA1Question3.cpp
+	$(CXX) $(CXXFLAGS) $< -o $(BIN)/$@
 
-TMA1Q4: $(SRC)/TMA1Question4.cpp
-	$(CXX) $(CXXFLAGS) $(SRC)/TMA1Question4.cpp -o $(BIN)/TMA1Question4
+TMA1Question4: $(SRC)/TMA1Question4.cpp
+	$(CXX) $(CXXFLAGS) $< -o $(BIN)/$@
 
-TMA1Q5: $(SRC)/TMA1Question5.cpp
-	$(CXX) $(CXXFLAGS) $(SRC)/TMA1Question5.cpp -o $(BIN)/TMA1Question5
+TMA1Question5: $(SRC)/TMA1Question5.cpp
+	$(CXX) $(CXXFLAGS) $< -o $(BIN)/$@
 
 
 
-TMA1Q1_debug: $(SRC)/TMA1Question1.cpp
-	$(CXX) $(CXXFLAGS) $(DEBUG) $(SRC)/TMA1Question1.cpp -o $(BIN)/TMA1Question1
+TMA1Question1_debug: $(SRC)/TMA1Question1.cpp
+	$(CXX) $(CXXFLAGS) $(DEBUG) $< -o $(BIN)/$@
 
-TMA1Q2_debug: $(SRC)/TMA1Question2.cpp
-	$(CXX) $(CXXFLAGS) $(DEBUG) $(SRC)/TMA1Question2.cpp -o $(BIN)/TMA1Question2
+TMA1Question2_debug: $(SRC)/TMA1Question2.cpp
+	$(CXX) $(CXXFLAGS) $(DEBUG) $< -o $(BIN)/$@
 
-TMA1Q3_debug: $(SRC)/TMA1Question3.cpp
-	$(CXX) $(CXXFLAGS) $(DEBUG) $(SRC)/TMA1Question3.cpp -o $(BIN)/TMA1Question3
+TMA1Question3_debug: $(SRC)/TMA1Question3.cpp
+	$(CXX) $(CXXFLAGS) $(DEBUG) $< -o $(BIN)/$@
 
-TMA1Q4_debug: $(SRC)/TMA1Question4.cpp
-	$(CXX) $(CXXFLAGS) $(DEBUG) $(SRC)/TMA1Question4.cpp -o $(BIN)/TMA1Question4
+TMA1Question4_debug: $(SRC)/TMA1Question4.cpp
+	$(CXX) $(CXXFLAGS) $(DEBUG) $< -o $(BIN)/$@
 
-TMA1Q5_debug: $(SRC)/TMA1Question5.cpp
-	$(CXX) $(CXXFLAGS) $(DEBUG) $(SRC)/TMA1Question5.cpp -o $(BIN)/TMA1Question5
+TMA1Question5_debug: $(SRC)/TMA1Question5.cpp
+	$(CXX) $(CXXFLAGS) $(DEBUG) $< -o $(BIN)/$@
 
 
 
